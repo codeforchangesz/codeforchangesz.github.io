@@ -1,0 +1,2666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code for Change - Digital Empowerment for Eswatini</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary: #ff5c1e;
+            --secondary: #026aca;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+      
+        
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            color: var(--dark);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card {
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .pricing-header {
+            background-color: var(--secondary);
+            color: white;
+            padding: 20px 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .price small {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        
+        .highlight-card {
+            border: 2px solid var(--primary);
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+        }
+        
+        .contact-form {
+            background-color: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        .animate-pop {
+            animation: pop 0.5s ease;
+        }
+        
+        @keyframes pop {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Pulse animation for CTA */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,92,30,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255,92,30,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,92,30,0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo.jpg" height="60" alt="Code for Change logo, bold orange and blue text with a stylized bridge icon, conveys optimism and digital connection, set on a white background" class="logo img-fluid" style="max-height:80px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#impact">Impact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Tech Elements -->
+<section class="hero text-center position-relative overflow-hidden" 
+         style="
+                background: linear-gradient(135deg, #026aca 0%, #ff5c1e 100%);
+                color: white;
+                padding: 140px 0;
+                min-height: 90vh;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+         ">
+    
+    <!-- Animated Tech Background Elements -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" style="overflow: hidden; z-index: 0;">
+        <div style="
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            top: 20%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        "></div>
+        <div style="
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: 50%;
+            top: 60%;
+            right: 15%;
+            animation: spin 20s linear infinite;
+        "></div>
+        <div style="
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(90deg, transparent 48%, rgba(255,255,255,0.03) 50%, transparent 52%),
+                linear-gradient(transparent 48%, rgba(255,255,255,0.03) 50%, transparent 52%);
+            background-size: 40px 40px;
+            opacity: 0.3;
+        "></div>
+    </div>
+
+    <div class="container position-relative" style="z-index: 1;">
+        <!-- Animated Logo with Tech Border -->
+        <div class="logo-container mb-5" style="
+            display: inline-block;
+            padding: 15px;
+            border-radius: 18px;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: perspective(500px) rotateX(0deg);
+            transition: all 0.5s ease;
+            animation: float 4s ease-in-out infinite;
+        ">
+            <img src="logo.jpg" alt="Code for Change Logo" 
+                 style="
+                    max-width: 180px;
+                    height: auto;
+                    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+                 "><br
+        </div>
+
+        <!-- Main Heading with Typing Effect -->
+        <h1 class="display-3 fw-bold mb-4" 
+            style="
+                font-size: calc(1.525rem + 3.3vw);
+                letter-spacing: 1px;
+                line-height: 1.3;
+                text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+                position: relative;
+                display: inline-block;
+            ">
+            <span class="typed-text" style="color: #fff;"></span>
+            <span class="cursor" style="
+                display: inline-block;
+                width: 3px;
+                background-color: #fff;
+                margin-left: 4px;
+                animation: blink 1s infinite;
+                height: 1em;
+                vertical-align: middle;
+            ">&nbsp;</span>
+        </h1>
+
+        <!-- Subheading with Glow Effect -->
+        <p class="lead mb-5 mx-auto" 
+           style="
+                color: rgba(255,255,255,0.9);
+                font-size: 1.35rem;
+                max-width: 700px;
+                text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+                position: relative;
+                padding: 15px;
+                background: rgba(0,0,0,0.15);
+                backdrop-filter: blur(5px);
+                border-radius: 10px;
+                border: 1px solid rgba(255,255,255,0.1);
+           ">
+           We empower NGOs, SMEs, and grassroots initiatives in Eswatini with <span style="font-weight:600; color:#fff;">free web development</span> and <span style="font-weight:600; color:#fff;">secure hosting solutions</span>.
+        </p>
+
+        <!-- Animated CTA Buttons -->
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+            <a href="#contact" 
+               class="btn btn-primary btn-lg pulse" 
+               style="
+                    background-color: #ff5c1e;
+                    border: none;
+                    padding: 12px 32px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                    box-shadow: 0 5px 15px rgba(255,92,30,0.4);
+                    position: relative;
+                    overflow: hidden;
+                    transition: all 0.3s;
+                    z-index: 1;
+               ">
+               <span style="position: relative; z-index: 2;">Claim Your Free Website</span>
+               <span style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                    transform: translateX(-100%);
+                    transition: all 0.6s;
+                    z-index: 1;
+               "></span>
+            </a>
+            
+            <a href="#pricing" 
+               class="btn btn-outline-light btn-lg" 
+               style="
+                    padding: 12px 32px;
+                    font-weight: 600;
+                    letter-spacing: 0.5px;
+                    position: relative;
+                    overflow: hidden;
+                    transition: all 0.3s;
+                    border-width: 2px;
+               ">
+               <span style="position: relative; z-index: 2;">Explore Hosting Plans</span>
+               <span style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(255,255,255,0.1);
+                    transform: translateX(-100%);
+                    transition: all 0.6s;
+                    z-index: 1;
+               "></span>
+            </a>
+        </div>
+
+        <!-- Scrolling Indicator -->
+        <div class="scroll-indicator mt-5" 
+             style="
+                position: absolute;
+                bottom: 30px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: rgba(255,255,255,0.7);
+                animation: bounce 2s infinite;
+             ">
+            <i class="fas fa-chevron-down" style="font-size: 1.5rem;"></i>
+        </div>
+    </div>
+
+    <!-- CSS Animations -->
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+            40% { transform: translateY(-20px) translateX(-50%); }
+            60% { transform: translateY(-10px) translateX(-50%); }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255,92,30,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(255,92,30,0); }
+            100% { box-shadow: 0 0 0 0 rgba(255,92,30,0); }
+        }
+    </style>
+
+    <!-- Typing Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const typedTextSpan = document.querySelector('.typed-text');
+            const cursorSpan = document.querySelector('.cursor');
+            
+            const textArray = ["Free Websites + Affordable Hosting", "Digital Tools for NGOs & SMEs", "Empowering Eswatini's Change-Makers"];
+            const typingDelay = 100;
+            const erasingDelay = 50;
+            const newTextDelay = 2000;
+            let textArrayIndex = 0;
+            let charIndex = 0;
+            
+            function type() {
+                if (charIndex < textArray[textArrayIndex].length) {
+                    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingDelay);
+                } else {
+                    setTimeout(erase, newTextDelay);
+                }
+            }
+            
+            function erase() {
+                if (charIndex > 0) {
+                    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+                    charIndex--;
+                    setTimeout(erase, erasingDelay);
+                } else {
+                    textArrayIndex++;
+                    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+                    setTimeout(type, typingDelay + 500);
+                }
+            }
+            
+            // Start animation
+            setTimeout(type, 1000);
+            
+            // Button hover effects
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    button.querySelector('span:last-child').style.transform = 'translateX(100%)';
+                });
+                button.addEventListener('mouseleave', () => {
+                    button.querySelector('span:last-child').style.transform = 'translateX(-100%)';
+                });
+            });
+        });
+    </script>
+</section>
+
+    <!-- About Section -->
+<section id="about" class="py-5 position-relative" style="background-color: #f8fafc; overflow: hidden;">
+    <!-- Tech Pattern Background -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle at 25% 25%, rgba(2,106,202,0.03) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255,92,30,0.03) 0%, transparent 50%);
+        z-index: 0;
+    "></div>
+    
+    <div class="container position-relative" style="z-index: 1;">
+        <h2 class="text-center section-title mb-5" style="
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            position: relative;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 15px;
+        ">
+            <span style="
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, #ff5c1e, #026aca);
+                border-radius: 2px;
+            "></span>
+            Our Why
+        </h2>
+        
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="card border-0 h-100" style="
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    overflow: hidden;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                ">
+                    <div class="card-body p-5" style="position: relative;">
+                        <!-- Decorative Tech Elements -->
+                        <div style="
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 50%;
+                            background: rgba(255,92,30,0.1);
+                            z-index: 0;
+                        "></div>
+                        
+                        <div style="position: relative; z-index: 1;">
+                            <h3 class="mb-4" style="
+                                font-weight: 700;
+                                color: #026aca;
+                                position: relative;
+                                display: inline-block;
+                            ">
+                                <i class="fas fa-bullseye me-2" style="color: #ff5c1e;"></i>
+                                Mission
+                            </h3>
+                            <p class="lead" style="
+                                font-size: 1.25rem;
+                                line-height: 1.6;
+                                color: #4a5568;
+                            ">
+                                To equip Eswatini's NGOs and SMEs with digital tools that amplify visibility, streamline operations, and unlock partnerships.
+                            </p>
+                            
+                            <h3 class="mt-5 mb-4" style="
+                                font-weight: 700;
+                                color: #026aca;
+                            ">
+                                <i class="fas fa-eye me-2" style="color: #ff5c1e;"></i>
+                                Vision
+                            </h3>
+                            <p class="lead" style="
+                                font-size: 1.25rem;
+                                line-height: 1.6;
+                                color: #4a5568;
+                            ">
+                                A future where every community-driven organization, no matter how small, thrives online and accelerates change.
+                            </p>
+                            
+                            <div style="
+                                background: linear-gradient(135deg, rgba(255,92,30,0.05) 0%, rgba(2,106,202,0.05) 100%);
+                                padding: 20px;
+                                border-radius: 10px;
+                                border-left: 4px solid #ff5c1e;
+                                margin-top: 40px;
+                            ">
+                                <blockquote style="
+                                    border-left: none;
+                                    margin: 0;
+                                    font-style: italic;
+                                    font-size: 1.1rem;
+                                    color: #4a5568;
+                                ">
+                                    <p>"We build with, not for. Every website is a bridge to global audiences."</p>
+                                    <footer style="
+                                        font-style: normal;
+                                        font-weight: 600;
+                                        color: #026aca;
+                                        margin-top: 10px;
+                                    ">
+                                        — Sihle Mthembu, <cite>Technical Lead</cite>
+                                    </footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div style="
+                    position: relative;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+                    transform: perspective(1000px) rotateY(-5deg);
+                    transition: transform 0.5s ease;
+                ">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+                         alt="Team working together" 
+                         class="img-fluid"
+                         style="
+                            display: block;
+                            width: 100%;
+                            height: auto;
+                            transition: transform 0.5s ease;
+                         ">
+                    <div style="
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        padding: 20px;
+                        background: linear-gradient(transparent, rgba(0,0,0,0.7));
+                        color: white;
+                    ">
+                        <h4 style="margin: 0; font-weight: 600;">Our Team in Action</h4>
+                        <p style="margin: 5px 0 0; opacity: 0.9;">Building digital solutions for Eswatini's changemakers</p>
+                    </div>
+                </div>
+                
+                <!-- Tech Stats -->
+                <div class="row mt-4 g-3">
+                    <div class="col-6">
+                        <div style="
+                            background: white;
+                            border-radius: 8px;
+                            padding: 15px;
+                            text-align: center;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                        ">
+                            <div style="
+                                font-size: 2rem;
+                                font-weight: 700;
+                                color: #ff5c1e;
+                                margin-bottom: 5px;
+                            ">2+</div>
+                            <div style="
+                                font-size: 0.9rem;
+                                color: #4a5568;
+                            ">NGOs Empowered</div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div style="
+                            background: white;
+                            border-radius: 8px;
+                            padding: 15px;
+                            text-align: center;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                        ">
+                            <div style="
+                                font-size: 2rem;
+                                font-weight: 700;
+                                color: #026aca;
+                                margin-bottom: 5px;
+                            ">7</div>
+                            <div style="
+                                font-size: 0.9rem;
+                                color: #4a5568;
+                            ">Days Delivery</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-5" style="background: linear-gradient(135deg, #f8fafc 0%, #f0f5ff 100%);">
+    <div class="container">
+        <h2 class="text-center section-title mb-5" style="
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            position: relative;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 15px;
+        ">
+            <span style="
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, #ff5c1e, #026aca);
+                border-radius: 2px;
+            "></span>
+            What We Offer
+        </h2>
+        
+        <div class="row g-4">
+            <!-- Web Development Card -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0" style="
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    background: white;
+                ">
+                    <div class="card-body p-4 text-center" style="position: relative;">
+                        <div style="
+                            width: 80px;
+                            height: 80px;
+                            background: rgba(255,92,30,0.1);
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto 20px;
+                        ">
+                            <i class="fas fa-laptop-code" style="font-size: 2rem; color: #ff5c1e;"></i>
+                        </div>
+                        <h3 style="
+                            font-weight: 700;
+                            color: #1a1a1a;
+                            margin-bottom: 15px;
+                        ">Free Web Development</h3>
+                        <p style="
+                            color: #4a5568;
+                            margin-bottom: 20px;
+                        ">Custom websites built by volunteers during our campaign window. Perfect for NGOs, SMEs, and individuals.</p>
+                        
+                        <ul style="
+                            text-align: left;
+                            padding-left: 20px;
+                            color: #4a5568;
+                            margin-bottom: 25px;
+                        ">
+                            <li class="mb-2" style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                ">✓</span>
+                                Portfolio sites from <strong>R1,399</strong>
+                            </li>
+                            <li class="mb-2" style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                ">✓</span>
+                                Business websites
+                            </li>
+                            <li style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                ">✓</span>
+                                NGO platforms
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" style="
+                            display: inline-block;
+                            background: rgba(255,92,30,0.1);
+                            color: #ff5c1e;
+                            padding: 8px 20px;
+                            border-radius: 50px;
+                            font-weight: 600;
+                            text-decoration: none;
+                            transition: all 0.3s ease;
+                        ">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Secure Hosting Card -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0" style="
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    background: white;
+                    transform: translateY(-10px);
+                ">
+                    <div class="card-body p-4 text-center" style="position: relative;">
+                        <div style="
+                            width: 80px;
+                            height: 80px;
+                            background: rgba(2,106,202,0.1);
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto 20px;
+                        ">
+                            <i class="fas fa-server" style="font-size: 2rem; color: #026aca;"></i>
+                        </div>
+                        <h3 style="
+                            font-weight: 700;
+                            color: #1a1a1a;
+                            margin-bottom: 15px;
+                        ">Secure Hosting</h3>
+                        <p style="
+                            color: #4a5568;
+                            margin-bottom: 20px;
+                        ">Reliable, cPanel-powered hosting with top-tier security and performance.</p>
+                        
+                        <ul style="
+                            text-align: left;
+                            padding-left: 20px;
+                            color: #4a5568;
+                            margin-bottom: 25px;
+                        ">
+                            <li class="mb-2" style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                ">✓</span>
+                                Free SSL certificates
+                            </li>
+                            <li class="mb-2" style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                ">✓</span>
+                                DDoS protection
+                            </li>
+                            <li class="mb-2" style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                ">✓</span>
+                                Daily backups
+                            </li>
+                            <li style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                ">✓</span>
+                                Email hosting
+                            </li>
+                        </ul>
+                        
+                        <a href="#pricing" style="
+                            display: inline-block;
+                            background: rgba(2,106,202,0.1);
+                            color: #026aca;
+                            padding: 8px 20px;
+                            border-radius: 50px;
+                            font-weight: 600;
+                            text-decoration: none;
+                            transition: all 0.3s ease;
+                        ">View Plans →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Digital Setup Card -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0" style="
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    background: white;
+                ">
+                    <div class="card-body p-4 text-center" style="position: relative;">
+                        <div style="
+                            width: 80px;
+                            height: 80px;
+                            background: rgba(255,92,30,0.1);
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            margin: 0 auto 20px;
+                        ">
+                            <i class="fas fa-rocket" style="font-size: 2rem; color: #ff5c1e;"></i>
+                        </div>
+                        <h3 style="
+                            font-weight: 700;
+                            color: #1a1a1a;
+                            margin-bottom: 15px;
+                        ">Digital Setup</h3>
+                        <p style="
+                            color: #4a5568;
+                            margin-bottom: 20px;
+                        ">Complete digital presence solutions for your organization.</p>
+                        
+                        <ul style="
+                            text-align: left;
+                            padding-left: 20px;
+                            color: #4a5568;
+                            margin-bottom: 25px;
+                        ">
+                            <li class="mb-2" style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                ">✓</span>
+                                Social media setup: <strong>E300</strong>
+                            </li>
+                            <li class="mb-2" style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                ">✓</span>
+                                Monthly management: <strong>E99/month</strong>
+                            </li>
+                            <li class="mb-2" style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                ">✓</span>
+                                Content strategy
+                            </li>
+                            <li style="position: relative; padding-left: 25px;">
+                                <span style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                ">✓</span>
+                                Branding guidance
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" style="
+                            display: inline-block;
+                            background: rgba(255,92,30,0.1);
+                            color: #ff5c1e;
+                            padding: 8px 20px;
+                            border-radius: 50px;
+                            font-weight: 600;
+                            text-decoration: none;
+                            transition: all 0.3s ease;
+                        ">Get Started →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-5" style="background-color: #ffffff;">
+    <div class="container">
+        <h2 class="text-center section-title mb-3" style="
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            position: relative;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 15px;
+        ">
+            <span style="
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, #ff5c1e, #026aca);
+                border-radius: 2px;
+            "></span>
+            Hosting Plans
+        </h2>
+        
+        <p class="text-center lead mb-5" style="
+            font-size: 1.25rem;
+            color: #4a5568;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        ">Affordable, scalable solutions for every need</p>
+        
+        <div class="row g-4 justify-content-center">
+            <!-- START Plan -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0" style="
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: all 0.3s ease;
+                    background: white;
+                ">
+                    <div class="pricing-header text-center" style="
+                        background: linear-gradient(135deg, #026aca 0%, #1a7fd8 100%);
+                        color: white;
+                        padding: 20px 0;
+                    ">
+                        <h3 class="mb-0" style="font-weight: 700;">START</h3>
+                        <div style="
+                            font-size: 0.9rem;
+                            opacity: 0.9;
+                            margin-top: 5px;
+                        ">Perfect for small projects</div>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="price my-4" style="
+                            font-size: 2.5rem;
+                            font-weight: 700;
+                            color: #1a1a1a;
+                        ">
+                            E1,499<small style="
+                                font-size: 1rem;
+                                font-weight: 400;
+                                color: #718096;
+                            ">/year</small>
+                        </div>
+                        
+                        <ul class="list-unstyled mb-4" style="
+                            text-align: left;
+                            color: #4a5568;
+                        ">
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                10GB SSD NVMe Storage
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                1 CPU (3.2 GHz), 2GB RAM
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                Up to 3 Domains
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                2 Email Accounts
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                Free SSL & Backups
+                            </li>
+                            <li class="py-2" style="
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                DDoS Protection
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn w-100" style="
+                            background: rgba(2,106,202,0.1);
+                            color: #026aca;
+                            border: none;
+                            padding: 12px;
+                            font-weight: 600;
+                            border-radius: 8px;
+                            transition: all 0.3s ease;
+                        ">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PRO Plan (Highlighted) -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0" style="
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+                    transition: all 0.3s ease;
+                    background: white;
+                    border: 2px solid #ff5c1e;
+                    transform: translateY(-10px);
+                ">
+                    <div class="pricing-header text-center" style="
+                        background: linear-gradient(135deg, #ff5c1e 0%, #ff7a4a 100%);
+                        color: white;
+                        padding: 20px 0;
+                    ">
+                        <h3 class="mb-0" style="font-weight: 700;">PRO</h3>
+                        <div style="
+                            font-size: 0.9rem;
+                            opacity: 0.9;
+                            margin-top: 5px;
+                        ">Most Popular Choice</div>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="price my-4" style="
+                            font-size: 2.5rem;
+                            font-weight: 700;
+                            color: #1a1a1a;
+                        ">
+                            E2,499<small style="
+                                font-size: 1rem;
+                                font-weight: 400;
+                                color: #718096;
+                            ">/year</small>
+                        </div>
+                        
+                        <ul class="list-unstyled mb-4" style="
+                            text-align: left;
+                            color: #4a5568;
+                        ">
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                "></i>
+                                20GB SSD NVMe Storage
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                "></i>
+                                3 CPUs (9.6 GHz), 3GB RAM
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                "></i>
+                                Unlimited Domains
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                "></i>
+                                Up to 10 Email Accounts
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                "></i>
+                                Free SSL & Backups
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                "></i>
+                                Advanced Security
+                            </li>
+                            <li class="py-2" style="
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #ff5c1e;
+                                "></i>
+                                Priority Support
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn w-100" style="
+                            background: #ff5c1e;
+                            color: white;
+                            border: none;
+                            padding: 12px;
+                            font-weight: 600;
+                            border-radius: 8px;
+                            transition: all 0.3s ease;
+                            box-shadow: 0 5px 15px rgba(255,92,30,0.3);
+                        ">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- PREMIUM Plan -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100 border-0" style="
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: all 0.3s ease;
+                    background: white;
+                ">
+                    <div class="pricing-header text-center" style="
+                        background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%);
+                        color: white;
+                        padding: 20px 0;
+                    ">
+                        <h3 class="mb-0" style="font-weight: 700;">PREMIUM</h3>
+                        <div style="
+                            font-size: 0.9rem;
+                            opacity: 0.9;
+                            margin-top: 5px;
+                        ">For growing businesses</div>
+                    </div>
+                    <div class="card-body text-center p-4">
+                        <div class="price my-4" style="
+                            font-size: 2.5rem;
+                            font-weight: 700;
+                            color: #1a1a1a;
+                        ">
+                            E3,999<small style="
+                                font-size: 1rem;
+                                font-weight: 400;
+                                color: #718096;
+                            ">/year</small>
+                        </div>
+                        
+                        <ul class="list-unstyled mb-4" style="
+                            text-align: left;
+                            color: #4a5568;
+                        ">
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #1a1a1a;
+                                "></i>
+                                40GB SSD NVMe Storage
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #1a1a1a;
+                                "></i>
+                                3 CPUs (9.6 GHz), 3GB RAM
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #1a1a1a;
+                                "></i>
+                                Unlimited Domains
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #1a1a1a;
+                                "></i>
+                                Unlimited Email Accounts
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #1a1a1a;
+                                "></i>
+                                Free SSL & Backups
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #1a1a1a;
+                                "></i>
+                                Enterprise Security
+                            </li>
+                            <li class="py-2" style="
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #1a1a1a;
+                                "></i>
+                                24/7 Premium Support
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="btn w-100" style="
+                            background: rgba(26,26,26,0.1);
+                            color: #1a1a1a;
+                            border: none;
+                            padding: 12px;
+                            font-weight: 600;
+                            border-radius: 8px;
+                            transition: all 0.3s ease;
+                        ">Get Premium</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <div style="
+                display: inline-block;
+                background: rgba(255,92,30,0.1);
+                border-left: 4px solid #ff5c1e;
+                padding: 20px;
+                border-radius: 8px;
+                max-width: 700px;
+                margin: 0 auto;
+            ">
+                <h4 style="
+                    font-weight: 700;
+                    color: #1a1a1a;
+                    margin-bottom: 10px;
+                ">Special Offer!</h4>
+                <p style="
+                    margin: 0;
+                    color: #4a5568;
+                    font-size: 1.1rem;
+                ">Website development is <strong style="color: #ff5c1e;">FREE</strong> during our campaign window. You only pay for hosting!</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Portfolio Section -->
+<section id="portfolio" class="py-5" style="background-color: #ffffff;">
+    <div class="container">
+        <h2 class="text-center section-title mb-3" style="
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            position: relative;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 15px;
+        ">
+            <span style="
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, #ff5c1e, #026aca);
+                border-radius: 2px;
+            "></span>
+            Personal Portfolio Websites
+        </h2>
+        
+        <p class="text-center lead mb-5" style="
+            font-size: 1.25rem;
+            color: #4a5568;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        ">Perfect for professionals, creatives, and individuals at just <strong style="color: #ff5c1e;">R1,399</strong></p>
+        
+        <div class="row g-4 justify-content-center">
+            <!-- What's Included Card -->
+            <div class="col-lg-6 col-md-6">
+                <div class="card h-100 border-0" style="
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: all 0.3s ease;
+                    background: white;
+                ">
+                    <div class="card-header" style="
+                        background: linear-gradient(135deg, #026aca 0%, #1a7fd8 100%);
+                        color: white;
+                        padding: 20px;
+                        border: none;
+                    ">
+                        <h3 class="mb-0" style="font-weight: 700;"><i class="fas fa-user-tie me-2"></i> What's Included</h3>
+                    </div>
+                    <div class="card-body p-4">
+                        <ul class="list-unstyled mb-0" style="
+                            text-align: left;
+                            color: #4a5568;
+                        ">
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                Custom-designed 3-page website
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                Responsive mobile-friendly design
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                Contact form with email integration
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                Portfolio gallery
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                Social media integration
+                            </li>
+                            <li class="py-2" style="
+                                border-bottom: 1px solid #edf2f7;
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                Basic SEO setup
+                            </li>
+                            <li class="py-2" style="
+                                position: relative;
+                                padding-left: 30px;
+                            ">
+                                <i class="fas fa-check" style="
+                                    position: absolute;
+                                    left: 0;
+                                    color: #026aca;
+                                "></i>
+                                1 year free updates
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Example Portfolio Card -->
+            <div class="col-lg-6 col-md-6">
+                <div class="card h-100 border-0" style="
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: all 0.3s ease;
+                    background: white;
+                ">
+                    <div class="card-header" style="
+                        background: linear-gradient(135deg, #ff5c1e 0%, #ff7a4a 100%);
+                        color: white;
+                        padding: 20px;
+                        border: none;
+                    ">
+                        <h3 class="mb-0" style="font-weight: 700;"><i class="fas fa-eye me-2"></i> Example Portfolio</h3>
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                         class="card-img-top" 
+                         alt="Portfolio Example"
+                         style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title" style="font-weight: 600; color: #1a1a1a;">Sihle Mthembu</h4>
+                        <p class="card-text" style="color: #4a5568;">Professional portfolio example</p>
+                        <a href="#" class="btn" style="
+                            background: #ff5c1e;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            font-weight: 600;
+                            border-radius: 8px;
+                            transition: all 0.3s ease;
+                            box-shadow: 0 5px 15px rgba(255,92,30,0.3);
+                        ">View Live Example</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-5">
+            <div style="
+                display: inline-block;
+                background: rgba(2,106,202,0.1);
+                border-left: 4px solid #026aca;
+                padding: 20px;
+                border-radius: 8px;
+                max-width: 700px;
+                margin: 0 auto;
+            ">
+                <h4 style="
+                    font-weight: 700;
+                    color: #1a1a1a;
+                    margin-bottom: 10px;
+                ">Special Offer!</h4>
+                <p style="
+                    margin: 0;
+                    color: #4a5568;
+                    font-size: 1.1rem;
+                ">Get your professional portfolio website ready in <strong style="color: #026aca;">7 business days</strong> with our quick turnaround service!</p>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Impact Section -->
+<section id="impact" class="py-5 position-relative" style="background-color: #ffffff; overflow: hidden;">
+    <!-- Tech Pattern Background -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(circle at 10% 20%, rgba(2,106,202,0.03) 0%, transparent 20%),
+            radial-gradient(circle at 90% 80%, rgba(255,92,30,0.03) 0%, transparent 20%);
+        z-index: 0;
+    "></div>
+    
+    <div class="container position-relative" style="z-index: 1;">
+        <h2 class="text-center section-title mb-5" style="
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            position: relative;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 15px;
+        ">
+            <span style="
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, #ff5c1e, #026aca);
+                border-radius: 2px;
+            "></span>
+            Our Impact
+        </h2>
+        
+        <div class="row g-4">
+            <!-- Current Projects Column -->
+            <div class="col-lg-6">
+                <div class="card border-0 h-100" style="
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    overflow: hidden;
+                    transition: transform 0.3s ease;
+                ">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4" style="
+                            font-weight: 700;
+                            color: #026aca;
+                            position: relative;
+                            padding-bottom: 10px;
+                        ">
+                            <span style="
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 50px;
+                                height: 3px;
+                                background: #ff5c1e;
+                            "></span>
+                            Current Projects
+                        </h3>
+                        
+                        <div class="row g-4">
+                            <!-- UAD Card -->
+                            <div class="col-md-6">
+                                <div class="card border-0 h-100" style="
+                                    background: rgba(2,106,202,0.05);
+                                    border-radius: 10px;
+                                    transition: transform 0.3s ease;
+                                ">
+                                    <div class="card-body text-center p-4">
+                                        <div style="
+                                            width: 60px;
+                                            height: 60px;
+                                            background: rgba(2,106,202,0.1);
+                                            border-radius: 50%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            margin: 0 auto 15px;
+                                        ">
+                                            <i class="fas fa-hands-helping" style="font-size: 1.5rem; color: #026aca;"></i>
+                                        </div>
+                                        <h4 style="font-weight: 600; color: #1a1a1a;">UAD</h4>
+                                        <p style="color: #4a5568; font-size: 0.9rem;">Community development NGO (Coming Soon)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- VMT Card -->
+                            <div class="col-md-6">
+                                <div class="card border-0 h-100" style="
+                                    background: rgba(2,106,202,0.05);
+                                    border-radius: 10px;
+                                    transition: transform 0.3s ease;
+                                ">
+                                    <div class="card-body text-center p-4">
+                                        <div style="
+                                            width: 60px;
+                                            height: 60px;
+                                            background: rgba(2,106,202,0.1);
+                                            border-radius: 50%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            margin: 0 auto 15px;
+                                        ">
+                                            <i class="fas fa-hands-helping" style="font-size: 1.5rem; color: #026aca;"></i>
+                                        </div>
+                                        <h4 style="font-weight: 600; color: #1a1a1a;">VMT</h4>
+                                        <p style="color: #4a5568; font-size: 0.9rem;">Youth empowerment NGO (Coming Soon)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Portfolio Card -->
+                            <div class="col-12">
+                                <div class="card border-0 h-100" style="
+                                    background: rgba(255,92,30,0.05);
+                                    border-radius: 10px;
+                                    transition: transform 0.3s ease;
+                                ">
+                                    <div class="card-body text-center p-4">
+                                        <div style="
+                                            width: 60px;
+                                            height: 60px;
+                                            background: rgba(255,92,30,0.1);
+                                            border-radius: 50%;
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                            margin: 0 auto 15px;
+                                        ">
+                                            <i class="fas fa-user-tie" style="font-size: 1.5rem; color: #ff5c1e;"></i>
+                                        </div>
+                                        <h4 style="font-weight: 600; color: #1a1a1a;">Sihle Mthembu</h4>
+                                        <p style="color: #4a5568; font-size: 0.9rem; margin-bottom: 15px;">Professional portfolio (Live)</p>
+                                        <a href="#" class="btn btn-sm" style="
+                                            background: rgba(255,92,30,0.1);
+                                            color: #ff5c1e;
+                                            border: none;
+                                            padding: 5px 15px;
+                                            border-radius: 50px;
+                                            font-weight: 600;
+                                        ">View Site</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- How It Works Column -->
+            <div class="col-lg-6">
+                <div class="card border-0 h-100" style="
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    overflow: hidden;
+                ">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4" style="
+                            font-weight: 700;
+                            color: #026aca;
+                            position: relative;
+                            padding-bottom: 10px;
+                        ">
+                            <span style="
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                width: 50px;
+                                height: 3px;
+                                background: #ff5c1e;
+                            "></span>
+                            How It Works
+                        </h3>
+                        
+                        <div class="timeline" style="position: relative;">
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item mb-4" style="
+                                position: relative;
+                                padding-left: 40px;
+                            ">
+                                <div style="
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 30px;
+                                    height: 30px;
+                                    background: #026aca;
+                                    color: white;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight: 600;
+                                ">1</div>
+                                <div style="
+                                    position: absolute;
+                                    left: 15px;
+                                    top: 30px;
+                                    bottom: -20px;
+                                    width: 2px;
+                                    background: #edf2f7;
+                                "></div>
+                                <div style="padding-left: 20px;">
+                                    <h5 style="
+                                        font-weight: 600;
+                                        color: #1a1a1a;
+                                        margin-bottom: 5px;
+                                    ">Reach Out</h5>
+                                    <p style="color: #4a5568; margin: 0;">Contact us via WhatsApp, email, or our form to discuss your needs.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Timeline Item 2 -->
+                            <div class="timeline-item mb-4" style="
+                                position: relative;
+                                padding-left: 40px;
+                            ">
+                                <div style="
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 30px;
+                                    height: 30px;
+                                    background: #ff5c1e;
+                                    color: white;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight: 600;
+                                ">2</div>
+                                <div style="
+                                    position: absolute;
+                                    left: 15px;
+                                    top: 30px;
+                                    bottom: -20px;
+                                    width: 2px;
+                                    background: #edf2f7;
+                                "></div>
+                                <div style="padding-left: 20px;">
+                                    <h5 style="
+                                        font-weight: 600;
+                                        color: #1a1a1a;
+                                        margin-bottom: 5px;
+                                    ">Choose Package</h5>
+                                    <p style="color: #4a5568; margin: 0;">Select from our hosting plans or portfolio package. Pay 50%+ to start.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Timeline Item 3 -->
+                            <div class="timeline-item mb-4" style="
+                                position: relative;
+                                padding-left: 40px;
+                            ">
+                                <div style="
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 30px;
+                                    height: 30px;
+                                    background: #026aca;
+                                    color: white;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight: 600;
+                                ">3</div>
+                                <div style="
+                                    position: absolute;
+                                    left: 15px;
+                                    top: 30px;
+                                    bottom: -20px;
+                                    width: 2px;
+                                    background: #edf2f7;
+                                "></div>
+                                <div style="padding-left: 20px;">
+                                    <h5 style="
+                                        font-weight: 600;
+                                        color: #1a1a1a;
+                                        margin-bottom: 5px;
+                                    ">We Build</h5>
+                                    <p style="color: #4a5568; margin: 0;">Our team develops your site and delivers within 7 business days.</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Timeline Item 4 -->
+                            <div class="timeline-item" style="
+                                position: relative;
+                                padding-left: 40px;
+                            ">
+                                <div style="
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 30px;
+                                    height: 30px;
+                                    background: #ff5c1e;
+                                    color: white;
+                                    border-radius: 50%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-weight: 600;
+                                ">4</div>
+                                <div style="padding-left: 20px;">
+                                    <h5 style="
+                                        font-weight: 600;
+                                        color: #1a1a1a;
+                                        margin-bottom: 5px;
+                                    ">Go Live & Scale</h5>
+                                    <p style="color: #4a5568; margin: 0;">Launch your site and add features as you grow.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #f8fafc 0%, #f0f5ff 100%);">
+    <div class="container">
+        <h2 class="text-center section-title mb-5" style="
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            position: relative;
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 15px;
+        ">
+            <span style="
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: linear-gradient(90deg, #ff5c1e, #026aca);
+                border-radius: 2px;
+            "></span>
+            What Our Clients Say
+        </h2>
+        
+        <div class="row g-4">
+            <!-- Testimonial 1 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0" style="
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.3s ease;
+                ">
+                    <div class="card-body text-center p-4" style="position: relative;">
+                        <div style="
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            font-size: 3rem;
+                            color: rgba(2,106,202,0.1);
+                            line-height: 1;
+                        ">"</div>
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Client" style="
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 3px solid #ff5c1e;
+                            margin-bottom: 20px;
+                        ">
+                        <p style="
+                            color: #4a5568;
+                            font-style: italic;
+                            margin-bottom: 20px;
+                            position: relative;
+                        ">"Code for Change transformed our NGO's online presence. We've seen a 300% increase in donor inquiries since launching our new site!"</p>
+                        <h5 style="
+                            font-weight: 700;
+                            color: #1a1a1a;
+                            margin-bottom: 5px;
+                        ">Sarah Dlamini</h5>
+                        <p style="
+                            color: #718096;
+                            font-size: 0.9rem;
+                            margin: 0;
+                        ">Director, UAD</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0" style="
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.3s ease;
+                    transform: translateY(10px);
+                ">
+                    <div class="card-body text-center p-4" style="position: relative;">
+                        <div style="
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            font-size: 3rem;
+                            color: rgba(255,92,30,0.1);
+                            line-height: 1;
+                        ">"</div>
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client" style="
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 3px solid #026aca;
+                            margin-bottom: 20px;
+                        ">
+                        <p style="
+                            color: #4a5568;
+                            font-style: italic;
+                            margin-bottom: 20px;
+                            position: relative;
+                        ">"The portfolio website they built for me has helped me land several new clients. Professional, fast, and affordable!"</p>
+                        <h5 style="
+                            font-weight: 700;
+                            color: #1a1a1a;
+                            margin-bottom: 5px;
+                        ">Sihle Mthembu</h5>
+                        <p style="
+                            color: #718096;
+                            font-size: 0.9rem;
+                            margin: 0;
+                        ">Creative Professional</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 3 -->
+            <div class="col-md-4">
+                <div class="card h-100 border-0" style="
+                    background: white;
+                    border-radius: 12px;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                    transition: transform 0.3s ease;
+                ">
+                    <div class="card-body text-center p-4" style="position: relative;">
+                        <div style="
+                            position: absolute;
+                            top: 20px;
+                            right: 20px;
+                            font-size: 3rem;
+                            color: rgba(2,106,202,0.1);
+                            line-height: 1;
+                        ">"</div>
+                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Client" style="
+                            width: 80px;
+                            height: 80px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            border: 3px solid #ff5c1e;
+                            margin-bottom: 20px;
+                        ">
+                        <p style="
+                            color: #4a5568;
+                            font-style: italic;
+                            margin-bottom: 20px;
+                            position: relative;
+                        ">"As a small business owner, I needed an online store that wouldn't break the bank. Code for Change delivered exactly what I needed."</p>
+                        <h5 style="
+                            font-weight: 700;
+                            color: #1a1a1a;
+                            margin-bottom: 5px;
+                        ">James Khumalo</h5>
+                        <p style="
+                            color: #718096;
+                            font-size: 0.9rem;
+                            margin: 0;
+                        ">Owner, Khumalo Crafts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 position-relative" style="
+    background: linear-gradient(135deg, #026aca 0%, #1a7fd8 100%);
+    color: white;
+    overflow: hidden;
+">
+    <!-- Animated Background Elements -->
+    <div style="
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.1);
+    "></div>
+    <div style="
+        position: absolute;
+        bottom: -100px;
+        left: -100px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.05);
+    "></div>
+    
+    <div class="container position-relative text-center" style="z-index: 1;">
+        <h2 class="display-5 fw-bold mb-4" style="
+            font-size: calc(1.425rem + 2.1vw);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        ">Limited-Time Offer!</h2>
+        <p class="lead mb-5" style="
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        ">Website development is <strong style="color: #ffcc00;">FREE</strong> during our campaign window. You only pay for hosting!</p>
+        <a href="#contact" class="btn btn-lg px-5" style="
+            background: white;
+            color: #026aca;
+            border: none;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        ">
+            <span style="position: relative; z-index: 2;">Claim Your Free Website Now</span>
+            <span style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(2,106,202,0.1), transparent);
+                transform: translateX(-100%);
+                transition: all 0.6s;
+            "></span>
+        </a>
+    </div>
+</section>
+<!-- Contact Form Section -->
+<div class="row g-4" id="contact" >
+    <!-- Contact Form Column -->
+    <div class="col-lg-6">
+        <div style="
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            height: 100%;
+        ">
+            <h3 class="mb-4" style="
+                font-weight: 700;
+                color: #026aca;
+                position: relative;
+                padding-bottom: 10px;
+            ">
+                <span style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 50px;
+                    height: 3px;
+                    background: #ff5c1e;
+                "></span>
+                Send Us a Message
+            </h3>
+            
+            <form id="contactForm" method="POST" action="https://formspree.io/f/xnnvkvqj">
+                <input type="hidden" name="_cc" value="codeforchangesz@gmail.com">
+                <input type="hidden" name="_subject" value="New Contact from Code for Change Website">
+                <input type="hidden" name="_replyto" id="replyTo">
+                
+                <div class="mb-3">
+                    <label for="name" style="
+                        display: block;
+                        font-weight: 600;
+                        color: #4a5568;
+                        margin-bottom: 8px;
+                    ">Your Name</label>
+                    <input type="text" id="name" name="name" required style="
+                        width: 100%;
+                        padding: 12px 15px;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 8px;
+                        transition: all 0.3s ease;
+                    ">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" style="
+                        display: block;
+                        font-weight: 600;
+                        color: #4a5568;
+                        margin-bottom: 8px;
+                    ">Email Address</label>
+                    <input type="email" id="email" name="email" required style="
+                        width: 100%;
+                        padding: 12px 15px;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 8px;
+                        transition: all 0.3s ease;
+                    ">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="phone" style="
+                        display: block;
+                        font-weight: 600;
+                        color: #4a5568;
+                        margin-bottom: 8px;
+                    ">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" style="
+                        width: 100%;
+                        padding: 12px 15px;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 8px;
+                        transition: all 0.3s ease;
+                    ">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="organization" style="
+                        display: block;
+                        font-weight: 600;
+                        color: #4a5568;
+                        margin-bottom: 8px;
+                    ">Organization (if applicable)</label>
+                    <input type="text" id="organization" name="organization" style="
+                        width: 100%;
+                        padding: 12px 15px;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 8px;
+                        transition: all 0.3s ease;
+                    ">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="message" style="
+                        display: block;
+                        font-weight: 600;
+                        color: #4a5568;
+                        margin-bottom: 8px;
+                    ">How Can We Help?</label>
+                    <textarea id="message" name="message" rows="4" required style="
+                        width: 100%;
+                        padding: 12px 15px;
+                        border: 1px solid #e2e8f0;
+                        border-radius: 8px;
+                        transition: all 0.3s ease;
+                    "></textarea>
+                </div>
+                
+                <button type="submit" style="
+                    background: linear-gradient(135deg, #ff5c1e 0%, #ff7a4a 100%);
+                    color: white;
+                    border: none;
+                    padding: 12px 30px;
+                    font-weight: 600;
+                    border-radius: 8px;
+                    width: 100%;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 5px 15px rgba(255,92,30,0.3);
+                ">Send Message</button>
+                
+                <div id="formStatus" style="
+                    margin-top: 20px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    display: none;
+                "></div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Contact Info Column -->
+    <div class="col-lg-6">
+        <div style="
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            height: 100%;
+        ">
+            <h3 class="mb-4" style="
+                font-weight: 700;
+                color: #026aca;
+                position: relative;
+                padding-bottom: 10px;
+            ">
+                <span style="
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 50px;
+                    height: 3px;
+                    background: #ff5c1e;
+                "></span>
+                Contact Information
+            </h3>
+            
+            <!-- Email -->
+            <div class="d-flex align-items-start mb-4" style="
+                background: rgba(2,106,202,0.05);
+                padding: 15px;
+                border-radius: 8px;
+            ">
+                <div style="
+                    width: 50px;
+                    height: 50px;
+                    background: #026aca;
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 15px;
+                    flex-shrink: 0;
+                ">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                    <h5 style="
+                        font-weight: 600;
+                        color: #1a1a1a;
+                        margin-bottom: 5px;
+                    ">Email Us</h5>
+                    <a href="mailto:codeforchangesz@gmail.com" style="
+                        color: #026aca;
+                        text-decoration: none;
+                        font-weight: 500;
+                    ">codeforchangesz@gmail.com</a>
+                </div>
+            </div>
+            
+            <!-- Phone -->
+            <div class="d-flex align-items-start mb-4" style="
+                background: rgba(255,92,30,0.05);
+                padding: 15px;
+                border-radius: 8px;
+            ">
+                <div style="
+                    width: 50px;
+                    height: 50px;
+                    background: #ff5c1e;
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 15px;
+                    flex-shrink: 0;
+                ">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div>
+                    <h5 style="
+                        font-weight: 600;
+                        color: #1a1a1a;
+                        margin-bottom: 5px;
+                    ">Call Us</h5>
+                    <a href="tel:+26876333878" style="
+                        color: #ff5c1e;
+                        text-decoration: none;
+                        font-weight: 500;
+                    ">+268 7933 3878</a>
+                </div>
+            </div>
+            
+            <!-- WhatsApp -->
+            <div class="d-flex align-items-start mb-4" style="
+                background: rgba(37,211,102,0.05);
+                padding: 15px;
+                border-radius: 8px;
+            ">
+                <div style="
+                    width: 50px;
+                    height: 50px;
+                    background: #25D366;
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 15px;
+                    flex-shrink: 0;
+                ">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div>
+                    <h5 style="
+                        font-weight: 600;
+                        color: #1a1a1a;
+                        margin-bottom: 5px;
+                    ">WhatsApp</h5>
+                    <a href="https://wa.me/26879333878" style="
+                        color: #25D366;
+                        text-decoration: none;
+                        font-weight: 500;
+                    ">Chat with us</a>
+                </div>
+            </div>
+            
+            <!-- Facebook -->
+            <div class="d-flex align-items-start" style="
+                background: rgba(24,119,242,0.05);
+                padding: 15px;
+                border-radius: 8px;
+            ">
+                <div style="
+                    width: 50px;
+                    height: 50px;
+                    background: #1877F2;
+                    color: white;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 15px;
+                    flex-shrink: 0;
+                ">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div>
+                    <h5 style="
+                        font-weight: 600;
+                        color: #1a1a1a;
+                        margin-bottom: 5px;
+                    ">Facebook</h5>
+                    <a href="https://www.facebook.com/profile.php?id=61573844261785" target="_blank" style="
+                        color: #1877F2;
+                        text-decoration: none;
+                        font-weight: 500;
+                    ">Code for Change</a>
+                </div>
+            </div>
+            
+            <!-- Ready to Partner -->
+            <div style="
+                background: linear-gradient(135deg, rgba(255,92,30,0.05) 0%, rgba(2,106,202,0.05) 100%);
+                padding: 20px;
+                border-radius: 8px;
+                margin-top: 30px;
+                border-left: 4px solid #ff5c1e;
+            ">
+                <h4 style="
+                    font-weight: 700;
+                    color: #1a1a1a;
+                    margin-bottom: 10px;
+                ">Ready to partner with us?</h4>
+                <p style="
+                    color: #4a5568;
+                    margin: 0;
+                ">Our team is ready to serve you! Get in touch today to start your digital transformation journey.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Form Submission Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        
+        // Set reply-to email when form is submitted
+        contactForm.addEventListener('submit', function(e) {
+            const emailInput = document.getElementById('email');
+            document.getElementById('replyTo').value = emailInput.value;
+        });
+        
+        // Handle form submission with Formspree
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            formStatus.style.display = 'block';
+            formStatus.textContent = 'Sending your message...';
+            formStatus.style.backgroundColor = '#f8f9fa';
+            formStatus.style.color = '#4a5568';
+            
+            // Submit form data
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success message
+                    formStatus.textContent = 'Message sent successfully! A copy has been sent to your email.';
+                    formStatus.style.backgroundColor = '#d4edda';
+                    formStatus.style.color = '#155724';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Network response was not ok');
+                }
+            })
+            .catch(error => {
+                // Error message
+                formStatus.textContent = 'There was a problem sending your message. Please try again later or contact us directly.';
+                formStatus.style.backgroundColor = '#f8d7da';
+                formStatus.style.color = '#721c24';
+            });
+        });
+    });
+</script>
+<!-- Animation Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animate elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.card, .timeline-item, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        const animatedElements = document.querySelectorAll('.card, .timeline-item, .testimonial-card');
+        animatedElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.6s ease';
+        });
+        
+        // Run on load and scroll
+        animateOnScroll();
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Button hover effects
+        const buttons = document.querySelectorAll('a.btn, button');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.querySelector('span:last-child').style.transform = 'translateX(100%)';
+            });
+            button.addEventListener('mouseleave', function() {
+                this.querySelector('span:last-child').style.transform = 'translateX(-100%)';
+            });
+        });
+    });
+</script>
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <img src="logo.jpg" alt="Logo" class="mb-3" style="max-width: 120px; height: auto;">
+                    <p>Empowering NGOs, SMEs, and individuals in Eswatini through affordable digital solutions.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="#pricing" class="text-white text-decoration-none">Pricing</a></li>
+                        <li class="mb-2"><a href="#impact" class="text-white text-decoration-none">Impact</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="text-white mb-4">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Web Development</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Hosting</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Portfolio Sites</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Digital Setup</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Social Media</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="text-white mb-4">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> codeforchangesz@gmail.com</li>
+                        <li class="mb-2"><i class="fas fa-phone-alt me-2"></i> +268 7933 3878</li>
+                        <li class="mb-2"><i class="fab fa-whatsapp me-2"></i> WhatsApp Chat</li>
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> Eswatini</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 small">&copy; 2025 Code for Change. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 small">Hosted on <a href="https://github.com/codeforchangesz" class="text-white">GitHub</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateElements = document.querySelectorAll('.animate__animated');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const animation = entry.target.getAttribute('data-animation');
+                        entry.target.classList.add('animate__animated', animation);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animateElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
